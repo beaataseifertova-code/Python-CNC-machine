@@ -28,10 +28,10 @@ while z < len(new_file):
                 coordinates_i = new_file[i].split(" ")
                 coordinates_z = new_file[z].split(" ")
         # extracts the X and Y coordinates from the line and converts them into float type
-                x_i = float(souradnice_i[1].replace("X", ""))
-                x_z = float(souradnice_z[1].replace("X", ""))
-                y_i = float(souradnice_i[2].replace("Y", ""))
-                y_z = float(souradnice_z[2].replace("Y", ""))
+                x_i = float(coordinates_i[1].replace("X", ""))
+                x_z = float(coordinates_z[1].replace("X", ""))
+                y_i = float(coordinates_i[2].replace("Y", ""))
+                y_z = float(coordinates_z[2].replace("Y", ""))
         # absolute value of distance between x1 and x0; the same goes for y1 and y0
                 if abs(x_z-x_i) > 1 or abs(y_z-y_i) > 1:
                     # the buzzer is turned on 6 stitches before the jump stitch
@@ -76,4 +76,5 @@ for i in jumps:
 with open(r"", mode="w", encoding="utf-8") as output_file:  # creates a destination file (supposed to be in inverted commas)
     for i in new_file:  # uploads new_file into destination file
         print(i, file=output_file)
+
 
